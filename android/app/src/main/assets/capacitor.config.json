@@ -1,0 +1,6 @@
+{
+	"appId": "com.checkIt.app",
+	"appName": "Check It",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
