@@ -63,7 +63,7 @@
   </div>
 
   <div id="list">
-    {#each $theList as item (item.id)}
+    {#each $theList.filter((toDo) => !toDo.done) as item (item.id)}
       <div class="item {item.done ? 'done' : ''}">
         <div class="left">
           <input
@@ -85,10 +85,14 @@
         >
       </div>
     {:else}
-      <div class="item">Nothing to see here</div>
+      {#if $theList.filter((toDo) => toDo.done).length > 0}
+        <div class="item">You've done everything</div>
+      {:else}
+        <div class="item">Nothing to see here</div>
+      {/if}
     {/each}
 
-    <!-- {#each $theList.filter((toDo) => toDo.done) as item (item.id)}
+    {#each $theList.filter((toDo) => toDo.done) as item (item.id)}
       <div class="item {item.done ? 'done' : ''}">
         <div class="left">
           <input type="checkbox" bind:checked={item.done} />
@@ -105,7 +109,7 @@
           ><ion-icon name="close-outline" /></span
         >
       </div>
-    {/each} -->
+    {/each}
 
     <br /><br /><br />
   </div>

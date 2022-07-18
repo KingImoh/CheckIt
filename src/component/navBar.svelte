@@ -42,6 +42,7 @@
     border-radius: 1rem;
     display: inline-flex;
     justify-content: space-around;
+    display: none;
   }
 
   .btn {
