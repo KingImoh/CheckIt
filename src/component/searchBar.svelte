@@ -18,42 +18,18 @@
   }
 </script>
 
-<div>
-  <ion-icon name="search-outline" />
-  <input type="text" bind:value={toDoSearch} on:keydown={searchToDo} />
-  <span>{doneListCount}/{listCount}</span>
+<div class="navbar text-[#ff3e00] bg-[#2b2c2e] rounded-full ">
+  <label class="input-group border-[#ff3e00]">
+    <span class=" text-2xl bg-inherit">
+      <ion-icon name="search-outline" />
+    </span>
+    <input
+      type="text"
+      placeholder="Search"
+      class="input text-lg bg-transparent border-x-[#ff3e00] border-none focus:outline-none"
+      bind:value={toDoSearch}
+      on:keydown={searchToDo}
+    />
+    <span class="px-2 text-lg bg-inherit"> {doneListCount}/{listCount} </span>
+  </label>
 </div>
-
-<style>
-  ion-icon {
-    font-size: 1.55rem;
-    color: #ff3e00;
-  }
-
-  input {
-    line-height: 1.5rem;
-    font-size: 1.5rem;
-    width: inherit;
-    background-color: transparent;
-    border: 0;
-    color: beige;
-    padding-left: 0.5rem;
-  }
-  input:focus {
-    outline: none;
-  }
-  div {
-    text-align: center;
-    border-radius: 1.25rem;
-    background-color: #2b2c2e;
-    margin-top: 3rem;
-    width: 85%;
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.2rem;
-    color: #ff3e00;
-    font-weight: bold;
-  }
-</style>
