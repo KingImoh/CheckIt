@@ -1,6 +1,6 @@
 <script>
   import toDoAPI from "../api/toDoAPI.js";
-  import { theList } from "../store/list.js";
+  import { theList } from "../store/list";
 
   function clearToDoList() {
     alert("Are you sure you want to clear the list?");
