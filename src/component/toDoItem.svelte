@@ -18,7 +18,7 @@
 
 <div
   class="rounded-2xl p-2 m-4 border-2 border-primary-focus mx-auto"
-  transition:fly={{ y: 200, duration: 700 }}
+  transition:fly={{ x: 200, duration: 700 }}
 >
   <span class="bg-inherit justify-start">
     <input
