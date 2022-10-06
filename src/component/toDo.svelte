@@ -1,6 +1,9 @@
 <script lang="ts">
   import { mySearch, theList } from "../store/list";
   import ToDoItem from "./toDoItem.svelte";
+
+  import { fly, fade } from "svelte/transition";
+
   let newToDo = "";
 
   $: pendingTodos =
@@ -59,7 +62,7 @@
     {/each}
 
     {#if doneTodos.length}
-      <div class="mt-32 pb-32">
+      <div class="mt-32 pb-32" transition:fly={{ x: -200, duration: 700 }}>
         <div
           class="text-2xl uppercase justify-self-center flex justify-center italic"
         >
