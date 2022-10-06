@@ -31,6 +31,14 @@
 </script>
 
 <div class="bodyCon">
+  {#if doneTodos.length && !pendingTodos.length}
+    <div class="item">You've done everything</div>
+  {/if}
+
+  {#if !doneTodos.length && !pendingTodos.length}
+    <div class="item">Nothing to see here yet</div>
+  {/if}
+
   <div class="item">
     <input
       type="text"
@@ -48,31 +56,26 @@
   <div id="list" class="pr-10">
     {#each pendingTodos as item (item.id)}
       <ToDoItem {...item} />
-    {:else}
-      {#if doneTodos.length > 0}
-        <div class="item">You've done everything</div>
-      {:else}
-        <div class="item">Nothing to see here</div>
-      {/if}
     {/each}
 
-    <div class="mt-32 pb-32">
-      <div
-        class="text-2xl uppercase justify-self-center flex justify-center italic"
-      >
-        done
+    {#if doneTodos.length}
+      <div class="mt-32 pb-32">
+        <div
+          class="text-2xl uppercase justify-self-center flex justify-center italic"
+        >
+          done
+        </div>
+        {#each doneTodos as item (item.id)}
+          <ToDoItem {...item} />
+        {/each}
       </div>
-      {#each doneTodos as item (item.id)}
-        <ToDoItem {...item} />
-      {/each}
-    </div>
+    {/if}
   </div>
 </div>
 
 <style>
   .bodyCon {
     padding: 1rem;
-
     max-width: 1000px;
     margin: 0 auto;
   }
@@ -82,9 +85,9 @@
     overflow-y: scroll;
     padding-right: 0.75rem;
   }
-  .done {
+  /* .done {
     text-decoration: line-through;
-  }
+  } */
   .item {
     display: flex;
     border: 1px solid grey;
