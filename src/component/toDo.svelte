@@ -35,11 +35,15 @@
 
 <div class="bodyCon">
   {#if doneTodos.length && !pendingTodos.length}
-    <div class="item">You've done everything</div>
+    <div class="item" transition:fly={{ x: -200, duration: 700 }}>
+      You've done everything
+    </div>
   {/if}
 
   {#if !doneTodos.length && !pendingTodos.length}
-    <div class="item">Nothing to see here yet</div>
+    <div class="item" transition:fly={{ x: -200, duration: 700 }}>
+      Nothing to see here yet
+    </div>
   {/if}
 
   <div class="item">
