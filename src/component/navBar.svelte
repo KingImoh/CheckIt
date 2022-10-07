@@ -9,31 +9,33 @@
   }
 </script>
 
-<div class="nav">
-  <div class="con">
-    <span><ion-icon name="list-outline" /></span>
-    <span><ion-icon name="checkmark-done-outline" /></span>
-  </div>
-
-  <div class="btn" on:click={clearToDoList}>
+<div class="bottom-2 absolute justify-around navbar mx-auto ">
+  <div class="btn " on:click={clearToDoList}>
     <ion-icon name="trash-outline" />
   </div>
-  <!-- <div class="btn" on:click={newTodo}>
+
+  <!-- <div class="con"> -->
+  <!-- <div class="btn"><ion-icon name="list-outline" /></div>
+  <div class="btn"><ion-icon name="checkmark-done-outline" /></div> -->
+  <!--</div>
+  <div class="btn" on:click={newTodo}>
     <ion-icon name="add-outline" />
   </div> -->
 </div>
 
 <style>
   .nav {
-    display: flex;
-    position: fixed;
+    /* display: flex; */
+    /* position: fixed; */
     justify-content: space-around;
     bottom: 10px;
     border-radius: 1.25rem;
     padding: 0.51rem;
     margin: 0 auto;
-    /* background-color: aqua; */
-    width: calc(100% - 50px);
+    background-color: aqua;
+    /* width: calc(100% - 50px); */
+
+    /*  */
   }
   .con {
     background-color: #2b2c2e;

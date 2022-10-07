@@ -6,15 +6,10 @@
 </script>
 
 <main>
-  <SearchBar />
+  <div class="container mx-auto p-[5%]">
+    <SearchBar />
 
-  <ToDo />
-
+    <ToDo />
+  </div>
   <NavBar />
 </main>
-
-<style>
-  main {
-    height: 100vh;
-  }
-</style>

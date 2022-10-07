@@ -17,7 +17,7 @@
 </script>
 
 <div
-  class="rounded-2xl p-2 m-4 border-2 border-primary-focus mx-auto"
+  class="rounded-2xl p-2 m-4 border-2 border-primary-focus mx-auto flex justify-between items-center"
   transition:fly={{ x: 200, duration: 700 }}
 >
   <span class="bg-inherit justify-start">
@@ -32,7 +32,7 @@
   <input
     type="text"
     bind:value={text}
-    class="input w-4/5 text-xl bg-transparent border-none justify-center focus:outline-none"
+    class="input w-4/5 text-xl bg-transparent border-none justify-center focus:outline-none overflow-x-ellipsis"
     class:done
     on:keyup={({ key }) => key === "Enter" && updateToDo(id)}
     readonly={done}
